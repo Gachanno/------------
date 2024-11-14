@@ -1,0 +1,350 @@
+@font-face
+    font-family: 'Roboto-Regular'
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype')
+@font-face
+    font-family: 'Roboto-Bold'
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype')
+*
+    box-sizing: border-box
+body
+    font-family: 'Roboto-Regular'
+    background: rgba(0, 119, 255, 0.15)
+a
+    text-decoration: none
+    color: inherit
+ul
+    list-style-type: disc
+// НАВИГАЦИЯ
+.container
+    max-width: 1160px
+    margin: 0 auto
+.nav-section
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__right-wrapper
+        display: flex
+        img
+            width: 54px
+    &__first-wrapper
+        display: flex
+        margin-right: 35px
+        align-items: center
+        font-family: 'Roboto-Bold'
+        font-size: 24px
+        line-height: 28px
+        text-transform: uppercase
+        gap: 10px
+        p:hover
+            color: #000045
+            cursor: pointer
+// декоративная линия 
+.hover-text
+    position: relative 
+    &:hover::after     
+        content: ""
+        position: absolute
+        border-radius: 1px
+        left: 50%       
+        bottom: -2px     
+        transform: translateX(-50%) 
+        width: 40px       
+        height: 2px       
+        background-color: #838383 
+        transition: width 0.3s   
+    &::after             
+        content: ""
+        position: absolute
+        border-radius: 1px
+        left: 50%
+        bottom: -2px
+        transform: translateX(-50%)
+        width: 0           
+        height: 2px
+        background-color: #838383
+        transition: width 0.3s
+// кнопка
+.btn
+    border: none
+    cursor: pointer
+    background: #030365
+    border-radius: 15px
+    color: white
+    padding: 13px 50px 13px 50px
+    font-family: 'Roboto-Bold'
+    font-size: 20px
+    line-height: 23px
+    text-transform: uppercase
+    transition: background 0.3s
+.btn:hover
+    background: #000045
+// переход между секциями
+.transition-line
+    position: absolute
+    width: 100vw
+    height: 13px
+    left: 0
+    top: 165px
+    background: #FFFFFF
+    filter: blur(5px)
+    z-index: 1000
+
+
+// 1 секция
+.first-section
+    margin-top: 85px
+    display: flex
+    flex-direction: column
+    gap: 110px
+    &__wrappers
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        gap: 155px
+    &__left-wrapper
+        display: flex
+        gap: 15px
+        align-items: center
+        cursor: pointer
+        .search-pointer
+            font-family: 'Roboto-Bold'
+            font-size: 20px
+            line-height: 23px
+            text-transform: uppercase
+            &:hover::after  
+                width: 100px 
+        img
+            transform: rotate(-90deg) 
+    &__right-wrapper
+        display: flex
+        gap: 25px
+        align-items: center
+        .input-group
+            display: flex
+            border: 1px solid #838383
+            border-radius: 2px
+            overflow: hidden
+            position: relative
+            input
+                width: 170px
+                height: 45px
+                padding: 0 10px 
+                border: none
+                outline: none
+                font-size: 16px
+                color: black
+            input::placeholder 
+                text-align: center
+            input:focus::-webkit-input-placeholder
+                color: transparent 
+            input:not(:last-child) 
+                border-right: 1px solid #838383 
+    .big-line
+        position: relative
+        left: 50%
+        top: 10px
+        transform: translateX(-50%)
+        width: 100vw
+        height: 20px
+        background: #FFFFFF
+        filter: blur(5px)
+        z-index: 1000
+
+
+
+// 2 секция + футер
+.footer-section-bgimg
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    width: 100vw
+    overflow: hidden
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-image: url('/src/img/Lavra.jpg')
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        background-attachment: scroll
+        opacity: 0.15
+        z-index: -1
+// 2 секция
+.second-section
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: 'Roboto-Bold'
+    max-width: 715px
+    margin-top: 30px
+    text-align: center
+    .list-container
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            left: 0
+            bottom: 0
+            background: rgba(255, 255, 255, 0.3)
+            filter: blur(2.5px) 
+            z-index: -1
+    .line-decor
+        margin: 30px 0 30px
+        background: #838383
+        width: 600px
+        height: 2px
+        border-radius: 1px 
+    .list-container
+        text-align: start
+    .title
+        font-size: 24px
+        line-height: 28px
+        text-transform: uppercase
+        color: #030365
+        margin-bottom: 35px
+    .list
+        font-size: 18px
+        line-height: 134.73%
+        font-variant: small-caps
+        padding-left: 20px
+    .paragraph
+        font-size: 18px
+        line-height: 24px
+        font-variant: small-caps
+    .title-list
+        font-size: 20px
+        color: #030365
+    .second
+        margin-top: 20px
+        
+// футер
+footer
+    padding-top: 100px
+    font-variant: small-caps
+    font-family: 'Roboto-Bold'
+    .footer-container
+        display: flex
+        justify-content: space-around
+    .transition-line
+        position: relative
+        left: 50%
+        top: 0
+        margin-bottom: 30px
+        transform: translateX(-50%)
+    .footer-column
+        display: flex
+        flex-direction: column
+    h3, .copyright
+        position: relative
+        font-size: 16px
+        margin-bottom: 15px
+    h3::after
+        content: ''
+        position: absolute
+        width: 60px
+        height: 1px
+        background: #838383
+        border-radius: 1px 
+        bottom: 0
+        left: 0
+    p
+        font-size: 10px
+        line-height: 250%
+
+
+
+@media (min-width: 2700px) 
+    .footer-section-bgimg
+        height: 100vh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
